@@ -1,0 +1,26 @@
+<style>
+        a{
+            color: rgb(240, 244, 244);
+            text-decoration: none;
+            border: 2px solid rgb(244, 7, 7);
+            border-radius: 10px;
+            background-color: black;
+            
+        }
+        [type=submit]
+        {
+            background-color:#2098ca;
+            padding: 1.5px;
+          
+            
+        }
+    </style>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <input type="submit" value="submit">
+    
+
+    <a href="{% url 'app' %}">go to view_book</a>
+</form>

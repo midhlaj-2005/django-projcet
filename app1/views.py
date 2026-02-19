@@ -23,3 +23,5 @@ def add_book(request):
         a.save()
         return redirect('view_books')
     return render(request,'add_book.html',{'form':a})
+
+'my name is midhlaj'

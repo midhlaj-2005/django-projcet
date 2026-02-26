@@ -14,8 +14,29 @@
             
         }
         table{
+             font-size: 20px;
+            
+             margin: auto;
+             margin-bottom: 30px;
+             color: rgb(136,136,136);
+             /* border: 5px black; */
+             
+
             
         }
+        h2{
+            text-align: center;
+            justify-content: center;
+        }
+        .now{
+            border: none;
+            background: linear-gradient(rgba(6,72,105,0.849),rgb(3,96,133));
+            border: 2px solid black;
+
+
+        }
+        
+        
     </style>
     
 </head>
@@ -24,18 +45,29 @@
     <table border="3">
         <tr>
             <th>id</th>
+            <th>cover</th>
             <th>name</th>
             <th>price</th>
             <th>author</th>
             <th>description</th>
+            <th >action</th>
         </tr>
         {%for i in book%}
         <tr>
             <td>{{i.id}}</td>
+            <td>
+                {%if i.cover%}
+                    <img src="{{ i.cover.url}}" width="100">
+                {% else %}
+                   no cover  
+                {% endif%}      
+            </td>
             <td>{{i.name}}</td>
             <td>{{i.price}}</td>
             <td>{{i.author}}</td>
             <td>{{i.description}}</td>
+            <td><a href="{% url 'update' i.id  %}" class="now">update</a>
+            <a href="{% url 'delete' i.id %}">delete</a></td>
 
 
         </tr>
@@ -47,7 +79,8 @@
     <a href="{% url 'home' %}">home</a>
     <a href="{% url 'add_book'%}">go to add_book</a>
 
-    
+
+
  
     
 </body>

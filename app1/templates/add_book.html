@@ -14,13 +14,32 @@
           
             
         }
+        .abc{
+            display: flex;
+            border: none;
+            width: 100%;
+            padding: 10px;
+            justify-content: center;
+            background: linear-gradient(rgba(6,72,105,0.849),rgb(3,96,133));
+            
+        }
+        .msn{
+           width: 100vw;
+           height: 50px;
+           color: red;
+           text-align: center;
+           font-size: 50px;
+        }
+       
+        
     </style>
 
-<form method="post">
+<div class="abc">
+<form method="post" enctype="multipart/form-data" >
     {% csrf_token %}
     {{ form.as_p}}
     <input type="submit" value="submit">
     
-
-    <a href="{% url 'app' %}">go to view_book</a>
 </form>
+</div>
+<a href="{% url 'app' %}" class="msn">go to view_book</a>
